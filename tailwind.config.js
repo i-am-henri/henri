@@ -9,6 +9,9 @@ export default {
           '100%': { opacity: 1, transform: 'translate(0px, 0px)' },
         }
       },
+      fontFamily: {
+        pacifico: '"Pacifico", cursive'
+      },
       animation: {
         bottom_fade: 'bottom_fade 0.3s ease-in-out ',
       }

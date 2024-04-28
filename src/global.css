@@ -1,3 +1,6 @@
+/* the pacificio font */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 /**
  * Tailwind CSS imports
  * View the full documentation at https://tailwindcss.com
@@ -5,6 +8,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 @layer base {
     :root {
@@ -45,21 +49,26 @@
     }
 
 }
+
 @layer utilities {
     .animation-delay-75 {
-      animation-delay: 75ms;
+        animation-delay: 75ms;
     }
+
     .animation-delay-500 {
-      animation-delay: 500ms;
+        animation-delay: 500ms;
     }
+
     .animation-delay-1000 {
-      animation-delay: 1s;
+        animation-delay: 1s;
     }
-  }
-:root {
-    view-transition-name: root; 
 }
-::view-transition-old(root), 
-::view-transition-new(root) { 
-    animation-duration: 0.3s; 
+
+:root {
+    view-transition-name: root;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.3s;
 }
