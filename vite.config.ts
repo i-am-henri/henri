@@ -1,3 +1,4 @@
+import { qwikSpeakInline } from 'qwik-speak/inline';
 /**
  * This is the base config for vite.
  * When building, the adapter config is used which loads this file and extends it.
@@ -19,7 +20,11 @@ const { dependencies = {}, devDependencies = {} } = pkg as any as {
  */
 export default defineConfig(({ command, mode }): UserConfig => {
   return {
-    plugins: [qwikCity(), qwikVite(), tsconfigPaths()],
+    plugins: [qwikCity(), qwikVite(), qwikSpeakInline({
+      supportedLangs: ['en-US', 'de-DE'],
+      defaultLang: 'en-US',
+      assetsPath: 'i18n'
+    }), tsconfigPaths()],
     // This tells Vite which dependencies to pre-build in dev mode.
     optimizeDeps: {
       // Put problematic deps that break bundling here, mostly those with binaries.
@@ -30,15 +35,15 @@ export default defineConfig(({ command, mode }): UserConfig => {
     ssr:
       command === "build" && mode === "production"
         ? {
-            // All dev dependencies should be bundled in the server build
-            noExternal: Object.keys(devDependencies),
-            // Anything marked as a dependency will not be bundled
-            // These should only be production binary deps (including deps of deps), CLI deps, and their module graph
-            // If a dep-of-dep needs to be external, add it here
-            // For example, if something uses `bcrypt` but you don't have it as a dep, you can write
-            // external: [...Object.keys(dependencies), 'bcrypt']
-            external: Object.keys(dependencies),
-          }
+          // All dev dependencies should be bundled in the server build
+          noExternal: Object.keys(devDependencies),
+          // Anything marked as a dependency will not be bundled
+          // These should only be production binary deps (including deps of deps), CLI deps, and their module graph
+          // If a dep-of-dep needs to be external, add it here
+          // For example, if something uses `bcrypt` but you don't have it as a dep, you can write
+          // external: [...Object.keys(dependencies), 'bcrypt']
+          external: Object.keys(dependencies),
+        }
         : undefined,
     server: {
       headers: {

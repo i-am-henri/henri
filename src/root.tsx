@@ -5,8 +5,10 @@ import {
   ServiceWorkerRegister,
 } from "@builder.io/qwik-city";
 import { RouterHead } from "./components/router-head/router-head";
-
+import { config } from "./speak-config";
+import { translationFn } from "./speak-function";
 import "./global.css";
+import { useQwikSpeak } from "qwik-speak";
 
 export default component$(() => {
   /**
@@ -15,7 +17,10 @@ export default component$(() => {
    *
    * Don't remove the `<head>` and `<body>` elements.
    */
-
+  /**
+   * Init Qwik Speak
+   */
+  useQwikSpeak({ config, translationFn });
   return (
     <QwikCityProvider>
       <head>
