@@ -1,6 +1,5 @@
 import type { RequestHandler } from '@builder.io/qwik-city';
-import {  ImageResponse, html } from 'og-img';
-import fs from "node:fs"
+import {  ImageResponse, fetchFont, html } from 'og-img';
 export const onGet: RequestHandler = async ({ send }) => {
   send(
     new ImageResponse(
@@ -17,7 +16,7 @@ export const onGet: RequestHandler = async ({ send }) => {
           {
             name: 'Pacificio',
             // Use `fs` (Node.js only) or `fetch` to read font file
-            data: fs.readFileSync('./public/Pacifico-Regular.ttf'),
+            data: await fetchFont("http://fonts.gstatic.com/s/pacifico/v8/GIrpeRY1r5CzbfL8r182lw.ttf"),
             weight: 400,
             style: 'normal',
           },

@@ -26,6 +26,7 @@ export default component$(() => {
       <head>
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
+        <meta property="og:image" content="https://henri.gg/og" />
         <RouterHead />
       </head>
       <body lang="en">
