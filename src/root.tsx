@@ -9,7 +9,7 @@ import { config } from "./speak-config";
 import { translationFn } from "./speak-function";
 import "./global.css";
 import { useQwikSpeak } from "qwik-speak";
-
+import { ThemeProvider } from 'qwik-themes'
 export default component$(() => {
   /**
    * The root of a QwikCity site always start with the <QwikCityProvider> component,
@@ -29,7 +29,9 @@ export default component$(() => {
         <RouterHead />
       </head>
       <body lang="en">
-        <RouterOutlet />
+        <ThemeProvider>
+          <RouterOutlet />
+        </ThemeProvider>
         <ServiceWorkerRegister />
       </body>
     </QwikCityProvider>
