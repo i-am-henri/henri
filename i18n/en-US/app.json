@@ -1,6 +1,9 @@
 {
   "app": {
     "changeLocale": "Change locale",
-    "title": "henri"
+    "title": "henri",
+    "work": {
+      "title": "Webdeveloper"
+    }
   }
 }

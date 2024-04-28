@@ -37,13 +37,25 @@
     }
 
     p {
-        @apply text-base
+        @apply text-base dark:text-[#e1e1e1]
     }
 
     body {
-        @apply dark:bg-[#282828]
+        @apply bg-[#e1e1e1] dark:bg-[#171717] text-[var(--foreground)]
     }
+
 }
+@layer utilities {
+    .animation-delay-75 {
+      animation-delay: 75ms;
+    }
+    .animation-delay-500 {
+      animation-delay: 500ms;
+    }
+    .animation-delay-1000 {
+      animation-delay: 1s;
+    }
+  }
 :root {
     view-transition-name: root; 
 }

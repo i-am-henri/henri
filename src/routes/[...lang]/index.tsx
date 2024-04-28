@@ -1,23 +1,55 @@
-import { component$ } from '@builder.io/qwik';
-import { type DocumentHead } from '@builder.io/qwik-city';
-import { inlineTranslate, useFormatDate, useFormatNumber } from 'qwik-speak';
-
+import { component$, useStore } from '@builder.io/qwik';
+import { Link, useNavigate, type DocumentHead } from '@builder.io/qwik-city';
+import { inlineTranslate } from 'qwik-speak';
 export default component$(() => {
+  const menu = useStore({
+    isOpen: false,
+  });
+  const nav = useNavigate();
+
   const t = inlineTranslate();
 
-  const fd = useFormatDate();
-  const fn = useFormatNumber();
 
   return (
-    <>
-      <h1>{t('app.title@@{{name}} demo', { name: 'Qwik Speak' })}</h1>
+    <div class="min-h-screen flex flex-col items-center  ">
+      <div class="fixed flex-col items-center w-full h-full top-0 right-0 left-0 bg-[#e1e1e1] dark:bg-[#171717] z-10" style={{ display: menu.isOpen ? 'flex' : 'none' }}>
+        <div class="xl:w-[700px] flex flex-col mt-16 space-y-16">
+          <div class="flex justify-between opacity-100 items-center">
+            <p>(hopefully) helping links</p>
+            <div onClick$={() => menu.isOpen = !menu.isOpen} class="flex group cursor-pointer flex-col items-center justify-center space-y-0.5 w-5 h-5">
+              <div class="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
+              <div class="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
+              <div class="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
+            </div>
+          </div>
+          <Link class="text-2xl animate-bottom_fade" href='/en/work'>Work</Link>
+          <Link class="text-2xl animate-bottom_fade" href='/contact'>Contact</Link>
+        </div>
+      </div>
+      <div class="xl:w-[700px] flex flex-col space-y-16">
+        <div class="flex items-center justify-between mt-16">
+          <div class="flex items-center justify-center  space-x-3">
+            <img onClick$={() => nav("#contact")} class="w-[40px] h-[40px] relative top-1 hover:ring-[#ffffff] cursor-pointer hover:dark:ring-[#282828] ring-2 ring-[#ffffffc0] dark:ring-[#282828c0]  ring-offset-2 ring-offset-[#e1e1e1]  dark:ring-offset-[#171717] rounded-full" src="../avatar.png" alt="avatar" width={"40"} height={"40"} />
+            <div class="flex flex-col">
+              <h2 class="relative top-2 font-semibold">henri</h2>
+              <p class="font-medium">{t("app.work.title")}</p>
+            </div>
+          </div>
+          <div onClick$={() => menu.isOpen = !menu.isOpen} class="flex group cursor-pointer flex-col items-center justify-center space-y-0.5 w-5 h-5">
+            <div class="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
+            <div class="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
+            <div class="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
+          </div>
 
-      <h3>{t('dates@@Dates')}</h3>
-      <p>{fd(Date.now(), { dateStyle: 'full', timeStyle: 'short' })}</p>
+        </div>
 
-      <h3>{t('numbers@@Numbers')}</h3>
-      <p>{fn(1000000, { style: 'currency' })}</p>
-    </>
+        <div>
+          <h2>my history</h2>
+          <p>I started to code almost 3 years ago, when I was 11 years old. My first experience was in C++, a very hard language for beginners, so I gave up really fast. But 1 month later, I searched for good languages for beginners and came accros html.</p>
+        </div>
+
+      </div>
+    </div>
   );
 });
 

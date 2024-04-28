@@ -1,6 +1,9 @@
 {
   "app": {
     "changeLocale": "Change locale",
-    "title": "henri in deutsch"
+    "title": "henri in deutsch",
+    "work": {
+      "title": "Webentwickler"
+    }
   }
 }

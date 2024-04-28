@@ -2,7 +2,17 @@
 export default {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        bottom_fade: {
+          '0%': { opacity: 0, transform: 'translate(0px, 20px)' },
+          '100%': { opacity: 1, transform: 'translate(0px, 0px)' },
+        }
+      },
+      animation: {
+        bottom_fade: 'bottom_fade 0.3s ease-in-out ',
+      }
+    },
   },
   plugins: [],
 };
