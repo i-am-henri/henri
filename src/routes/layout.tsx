@@ -1,5 +1,6 @@
 import { component$, Slot } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
+
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
   // https://qwik.dev/docs/caching/
@@ -14,11 +15,6 @@ export const onRequest: RequestHandler = ({ locale, error,  }) => {
   // E.g. 404 error page
   if (!locale()) throw error(404, 'Page not found for requested locale');
 
-  // E.g. Redirect
-  // if (!locale()) {
-  //   const getPath = localizePath();
-  //   throw redirect(302, getPath('/page', 'en-US')); // Let the server know the language to use
-  // }
 };
 
 export default component$(() => {

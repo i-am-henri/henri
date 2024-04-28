@@ -13,7 +13,7 @@ export default component$(() => {
   return (
     <div class="min-h-screen flex flex-col items-center  ">
       <div class="fixed flex-col items-center w-full h-full top-0 right-0 left-0 bg-[#e1e1e1] dark:bg-[#171717] z-10" style={{ display: menu.isOpen ? 'flex' : 'none' }}>
-        <div class="xl:w-[700px] flex flex-col mt-16 space-y-16">
+        <div class="xl:w-[700px] flex flex-col mt-[78px] space-y-16">
           <div class="flex justify-between opacity-100 items-center">
             <p>(hopefully) helping links</p>
             <div onClick$={() => menu.isOpen = !menu.isOpen} class="flex group cursor-pointer flex-col items-center justify-center space-y-0.5 w-5 h-5">
@@ -32,7 +32,7 @@ export default component$(() => {
             <img onClick$={() => nav("#contact")} class="w-[40px] h-[40px] relative top-1 hover:ring-[#ffffff] cursor-pointer hover:dark:ring-[#282828] ring-2 ring-[#ffffffc0] dark:ring-[#282828c0]  ring-offset-2 ring-offset-[#e1e1e1]  dark:ring-offset-[#171717] rounded-full" src="../avatar.png" alt="avatar" width={"40"} height={"40"} />
             <div class="flex flex-col">
               <h2 class="relative top-2 font-semibold">henri</h2>
-              <p class="font-medium">{t("app.work.title")}</p>
+              <p class="font-medium">{t("app.work.title")} - {t("app.work.land")}</p>
             </div>
           </div>
           <div onClick$={() => menu.isOpen = !menu.isOpen} class="flex group cursor-pointer flex-col items-center justify-center space-y-0.5 w-5 h-5">
@@ -47,6 +47,10 @@ export default component$(() => {
           <h2>my history</h2>
           <p>I started to code almost 3 years ago, when I was 11 years old. My first experience was in C++, a very hard language for beginners, so I gave up really fast. But 1 month later, I searched for good languages for beginners and came accros html.</p>
         </div>
+        <div>
+          <h2>Skills</h2>
+          <p>I have 3 years of experience in the webdevelopment space.</p>
+        </div>
 
       </div>
     </div>
@@ -57,7 +61,7 @@ export const head: DocumentHead = () => {
   const t = inlineTranslate();
 
   return {
-    title: t('app.head.home.title@@{{name}}', { name: 'Qwik Speak' }),
-    meta: [{ name: 'description', content: t('app.head.home.description@@Localized routing') }],
+    title: "henri",
+    meta: [{ name: 'description', content: t('app.head.home.description@@Localized routing') }, {name: "og:image", content: "http://localhost:5173/og"}, {name: "og:description", content: "http://localhost:3000/en/home"}],
   };
 };
