@@ -23,7 +23,7 @@ export default component$(() => {
               <div class="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
             </div>
           </div>
-          <Link class="text-2xl animate-bottom_fade" href='/en/work'>Work</Link>
+          <Link class="text-2xl animate-bottom_fade" href='/work'>Work</Link>
           <Link class="text-2xl animate-bottom_fade" href='/contact'>Contact</Link>
         </div>
       </div>
