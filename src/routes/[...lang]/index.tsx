@@ -29,7 +29,7 @@ export default component$(() => {
       <div class="xl:w-[700px] flex flex-col space-y-16">
         <div class="flex items-center justify-between mt-16">
           <div class="flex items-center justify-center  space-x-3">
-            <img onClick$={() => nav("#contact")} class="w-[40px] h-[40px] relative top-1 hover:ring-[#ffffff] cursor-pointer hover:dark:ring-[#282828] ring-2 ring-[#ffffffc0] dark:ring-[#282828c0]  ring-offset-2 ring-offset-[#e1e1e1]  dark:ring-offset-[#171717] rounded-full" src="../avatar.png" alt="avatar" width={"40"} height={"40"} />
+            <img onClick$={() => nav("#contact")} class="w-[40px] h-[40px] relative top-1 hover:ring-[#ffffff] cursor-pointer hover:dark:ring-[#282828] ring-2 ring-[#ffffffc0] dark:ring-[#282828c0]  ring-offset-2 ring-offset-[#e1e1e1]  dark:ring-offset-[#171717] rounded-full" src="https://avatars.githubusercontent.com/u/98414850?v=4" alt="avatar" width={"40"} height={"40"} />
             <div class="flex flex-col">
               <h2 class="relative top-2 font-semibold">henri</h2>
               <p class="font-medium">{t("app.work.title")} - {t("app.work.land")}</p>
