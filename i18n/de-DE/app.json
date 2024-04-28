@@ -2,9 +2,17 @@
   "app": {
     "changeLocale": "Change locale",
     "title": "henri in deutsch",
+    "history": {
+      "title": "Meine Geschichte",
+      "content": "Ich habe vor ungefähr 3 Jahren mit dem Programmieren angefangen. Anfangs bin ich auf C++ gestoßen, ein sehr schwer zu lernende Programmiersprache für Anfänger. Somit kamm, dass ich leider schnell aufgehört hatte. Nach einem Monat wollte ich mich aber nocheinmal in dem Thema probieren, und ich habe angefangen mit HTML, Css und Javascript Websiten zu entwickeln."
+    },
     "work": {
       "title": "Webentwickler",
       "land": "Deutschland"
+    },
+    "today": {
+      "title": "Heutzutage",
+      "content": "Heute bin ich 14 Jahre alt, ich gehe zu einem Gymnasium und programmiere immer noch am meisten in dem Webbereich. Zurzeit habe ich viele Projekte am laufen, plane auch einige in nächster Zeit zur veröffentlichen. Vortschritte gibt es auf Plattformen wie layers.to oder auch auf meinem GitHub Profil."
     }
   }
 }

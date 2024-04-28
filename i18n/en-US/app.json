@@ -2,6 +2,10 @@
   "app": {
     "changeLocale": "Change locale",
     "title": "henri",
+    "history": {
+      "title": "My History",
+      "content": "I started to code almost 3 years ago, when I was 11 years old. My first experience was in C++, a very hard language for beginners, so I gave up really fast. But 1 month later, I searched for good languages for beginners and came accros html."
+    },
     "work": {
       "title": "Webdeveloper",
       "land": "germany"
