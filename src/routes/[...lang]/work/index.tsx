@@ -41,21 +41,7 @@ export default component$(() => {
 
         </div>
 
-        <div>
-          <h2>{t("app.history.title")}</h2>
-          <p>{t("app.history.content")}</p>
-        </div>
-        
-        <div>
-          <h2>{t("app.today.title")}</h2>
-          <p>{t("app.today.content")}</p>
-        </div>
-
-        <div>
-          <h2>Skills</h2>
-          <p>I have 3 years of experience in the webdevelopment space.</p>
-        </div>
-
+       {/* The main content on this page */}
       </div>
     </div>
   );
