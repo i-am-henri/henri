@@ -52,5 +52,8 @@
   "dependencies": {
     "og-img": "^0.2.1",
     "qwik-themes": "^0.2.0"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.9.5"
   }
 }
