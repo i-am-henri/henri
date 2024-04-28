@@ -14,7 +14,7 @@ export default component$(() => {
   return (
     <div class="min-h-screen flex flex-col items-center  ">
       <div class="fixed flex-col items-center w-full h-full top-0 right-0 left-0 bg-[#e1e1e1] dark:bg-[#171717] z-10" style={{ display: menu.isOpen ? 'flex' : 'none' }}>
-        <div class="xl:w-[700px] flex flex-col mt-[78px] space-y-16">
+        <div class="lg:w-[700px] flex flex-col mt-[78px] space-y-16">
           <div class="flex justify-between opacity-100 items-center">
             <p>(hopefully) helping links</p>
             <div onClick$={() => menu.isOpen = !menu.isOpen} class="flex group cursor-pointer flex-col items-center justify-center space-y-0.5 w-5 h-5">
