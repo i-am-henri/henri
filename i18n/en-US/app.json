@@ -10,5 +10,8 @@
       "title": "Webdeveloper",
       "land": "germany"
     }
+  },
+  "work": {
+    "cookie-clicker": "I've created my own cookie-clicker 3 months ago. I used an database to store the scores, you can view the scores from others and you can enjoy a minimalistic clicking experience."
   }
 }

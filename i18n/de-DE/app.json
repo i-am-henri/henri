@@ -14,5 +14,8 @@
       "title": "Heutzutage",
       "content": "Heute bin ich 14 Jahre alt, ich gehe zu einem Gymnasium und programmiere immer noch am meisten in dem Webbereich. Zurzeit habe ich viele Projekte am laufen, plane auch einige in nächster Zeit zur veröffentlichen. Vortschritte gibt es auf Plattformen wie layers.to oder auch auf meinem GitHub Profil."
     }
+  },
+  "work": {
+    "cookie-clicker": "Ich habe vor ungefähr 3 Monaten mein eigenes Minigame entwickelt, einen Cookie-Clicker. Dabei habe ich eine Datenbank verwendet um die Scores zu speichern und abzurufen und die Components von shadcn/ui um ein minimalistisch Design zu integrieren."
   }
 }
