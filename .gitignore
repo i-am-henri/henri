@@ -36,3 +36,10 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+.env
+# lock files
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+bun.lockb
