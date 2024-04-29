@@ -1,6 +1,7 @@
 import { Link } from "next-view-transitions";
 import {getTranslations} from 'next-intl/server';
 import { useTranslations } from "next-intl";
+import ThemeSwitch from "@/components/ThemeSwitch";
  
 export async function generateMetadata({params: {locale}}: {params: {locale: string}}) {
     const t = await getTranslations({locale, namespace: 'Metadata'});
@@ -13,6 +14,7 @@ export default function Home() {
     const t = useTranslations("")
     return (
         <div className="min-h-screen flex flex-col items-center  ">
+            <ThemeSwitch />
             <div className="fixed flex-col items-center w-full h-full top-0 right-0 left-0 bg-[#e1e1e1] dark:bg-[#171717] z-10 hidden" >
                 <div className="lg:w-[700px] flex flex-col mt-[78px] space-y-16">
                     <div className="flex justify-between opacity-100 items-center">
