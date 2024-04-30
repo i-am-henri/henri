@@ -14,5 +14,34 @@
     --foreground: #e1e1e1;
   }
 }
+
+::view-transition-group(root) {
+  animation-duration: 1.25s;
+}
+::view-transition-new(root),
+::view-transition-old(root) {
+  mix-blend-mode: normal;
+}
+ 
+::view-transition-new(root) {
+  animation-name: themeSwitch;
+}
+ 
+::view-transition-old(root),
+.dark::view-transition-old(root) {
+  animation: none;
+}
+.dark::view-transition-new(root) {
+  animation-name: themeSwitch;
+}
+ 
+@keyframes themeSwitch {
+  from {
+    clip-path: circle(0% at 50% 150%);
+  }
+  to {
+    clip-path: circle(150% at 50% 50%);
+  }
+}
 @layer bg-background;
 @layer text-foreground;

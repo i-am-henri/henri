@@ -2,6 +2,7 @@ import { Link } from "next-view-transitions";
 import {getTranslations} from 'next-intl/server';
 import { useTranslations } from "next-intl";
 import ThemeSwitch from "@/components/ThemeSwitch";
+import { AnimatedText } from "@/components/TextAnimation";
  
 export async function generateMetadata({params: {locale}}: {params: {locale: string}}) {
     const t = await getTranslations({locale, namespace: 'Metadata'});
@@ -47,7 +48,7 @@ export default function Home() {
                     </div>
 
                 </div>
-
+                <AnimatedText>hey, ich heiße Henri</AnimatedText>
                 <div>
                     <h2>{t("app.history.title")}</h2>
                     <p>{t("app.history.content")}</p>
