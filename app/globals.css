@@ -37,7 +37,7 @@
  
 @keyframes themeSwitch {
   from {
-    clip-path: circle(0% at 50% 150%);
+    clip-path: circle(0% at 150% 50%);
   }
   to {
     clip-path: circle(150% at 50% 50%);

@@ -1,5 +1,23 @@
 {
-    "Metadata": {
-        "title": "Deutsch"
+    "app": {
+        "work": {
+            "title": "Webentwickler",
+            "land": "Deutschland"
+        },
+        "history": {
+            "title": "Meine Geschichte",
+            "content": ""
+        },
+        "today": {
+            "title": "Heutzutage",
+            "content": "Heute bin ich 14 Jahre alt, ich lebe in Deutschland und programmiere immer noch am meisten im Webbereich, hauptsächlich mit Technologien wie NextJs mit Typescript."
+        }
+    },
+    "nav": {
+        "links": {
+            "work": "Arbeit",
+            "contact": "Kontakt"
+        }
     }
+
 }
