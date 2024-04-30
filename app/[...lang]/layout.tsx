@@ -1,3 +1,4 @@
+import { NextIntlClientProvider } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
 
 export default function LocaleLayout({
@@ -10,7 +11,7 @@ export default function LocaleLayout({
     unstable_setRequestLocale(locale);
     return (
         <html lang={locale}>
-            <body>{children}</body>
+            <body><NextIntlClientProvider>{children}</NextIntlClientProvider></body>
         </html>
     );
 }
