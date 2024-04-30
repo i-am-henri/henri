@@ -1,5 +1,23 @@
 {
-    "Metadata": {
-        "title": "english"
+    "app": {
+        "work": {
+            "title": "webdeveloper",
+            "land": "germany"
+        },
+        "history": {
+            "title": "my history",
+            "content": ""
+        },
+        "today": {
+            "title": "today",
+            "content": "lol"
+        }
+    },
+    "nav": {
+        "links": {
+            "work": "work",
+            "contact": "contact"
+        }
     }
+
 }

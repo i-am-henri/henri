@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import pick from 'lodash/pick';
 import Theme from "@/components/ThemeProvider";
-import { NextIntlClientProvider } from "next-intl";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

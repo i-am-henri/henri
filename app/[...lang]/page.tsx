@@ -5,20 +5,14 @@ import ThemeSwitch from "@/components/ThemeSwitch";
 import { AnimatedText } from "@/components/TextAnimation";
 import Navigation from "@/components/Navigation";
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
-    const t = await getTranslations({ locale, namespace: 'Metadata' });
 
-    return {
-        title: t('title')
-    };
-}
 export default function Home() {
     const t = useTranslations()
     return (
         <div className="min-h-screen flex flex-col items-center  ">
-            <Navigation />
-            <div className="lg:w-[700px] flex flex-col space-y-16">
-               
+            <Navigation land={t("app.work.land")} work={t("app.work.title")} />
+            <div className="lg:w-[700px] flex flex-col space-y-16 mt-16">
+
                 <AnimatedText>hey, ich heiße Henri</AnimatedText>
                 <div>
                     <h2>{t("app.history.title")}</h2>

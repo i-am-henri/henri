@@ -1,19 +1,17 @@
 "use client"
 import { Link } from "next-view-transitions";
 import ThemeSwitch from "./ThemeSwitch";
-import { useTranslations } from "next-intl";
 import { useState } from "react";
 import {motion} from "framer-motion"
-export default function Navigation() {
-    const t = useTranslations()
+export default function Navigation({work, land}: {work: string, land: string}) {
     const [menu, setMenu] = useState(false);
     return (
-        <div className="">
-            <div className="fixed flex-col items-center w-full h-full top-0 right-0 left-0 bg-[#e1e1e1] dark:bg-[#171717] z-10 hidden" >
+        <>
+            <div className="fixed flex-col items-center w-full h-full top-0 right-0 left-0 bg-[#e1e1e1] dark:bg-[#171717] z-10 hidden" style={{display: menu? "flex": "none"}} >
                 <div className="lg:w-[700px] flex flex-col mt-[78px] space-y-16">
                     <div className="flex justify-between opacity-100 items-center">
                         <p>(hopefully) helping links</p>
-                        <div className="flex group cursor-pointer flex-col items-center justify-center space-y-0.5 w-5 h-5">
+                        <div onClick={() => setMenu(false)} className="flex z-20 group cursor-pointer flex-col items-center justify-center space-y-0.5 w-5 h-5" >
                             <div className="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
                             <div className="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
                             <div className="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
@@ -31,12 +29,12 @@ export default function Navigation() {
                             </Link>
                             <div className="flex flex-col">
                                 <h2 className="relative top-2 font-semibold">henri</h2>
-                                <p className="font-medium">{t("app.work.title")} - {t("app.work.land")}</p>
+                                <p className="font-medium">{work} - {land}</p>
                             </div>
                         </div>
                         <div className="flex space-x-2 items-center">
                             <ThemeSwitch />
-                            <div className="flex group cursor-pointer flex-col items-center justify-center space-y-0.5 w-5 h-5">
+                            <div className="flex group cursor-pointer flex-col items-center justify-center space-y-0.5 w-5 h-5" onClick={() => setMenu(true)}>
                                 <div className="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
                                 <div className="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
                                 <div className="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
@@ -45,6 +43,6 @@ export default function Navigation() {
 
                     </div>
                 </div>
-        </div>
+        </>
     )
 }
