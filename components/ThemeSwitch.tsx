@@ -3,6 +3,7 @@
 import { Moon, Sun } from '@phosphor-icons/react';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
+import { useEffect } from 'react';
 
 export default function ThemeSwitch() {
   const { resolvedTheme, setTheme } = useTheme();
@@ -19,7 +20,10 @@ export default function ThemeSwitch() {
   interface GlobalDocument extends Document {
     startViewTransition?(setupPromise: () => Promise<void> | void): ViewTransition;
   }
-  const glbDocument: GlobalDocument = document
+  let glbDocument: GlobalDocument;
+  useEffect(() => {
+    glbDocument = document
+  })
   return (
     <div onClick={() => {
       if (!glbDocument.startViewTransition) switchTheme();
