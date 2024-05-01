@@ -28,7 +28,7 @@ export default function ThemeSwitch() {
     <div onClick={() => {
       if (!glbDocument.startViewTransition) switchTheme();
       glbDocument!.startViewTransition!(switchTheme);
-    }} className='rounded-full border p-2 cursor-pointer'>
+    }} className='rounded-full border border-[#282828c0] dark:border-[#ffffffc0] p-2 cursor-pointer'>
       {resolvedTheme == "dark" ? <Moon /> : <Sun />}
     </div>
   );
