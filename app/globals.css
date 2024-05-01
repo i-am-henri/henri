@@ -7,12 +7,19 @@
   :root {
     --background: #e1e1e1;
     --foreground: black;
+    --text-accent: #2c2c2c;
   }
 
   .dark {
     --background: #171717
     --foreground: #e1e1e1;
+    --text-accent: #aaaaaa;
   }
+}
+
+h2 {
+  margin-bottom: 8px;
+  font-size: large;
 }
 
 ::view-transition-group(root) {
@@ -26,7 +33,11 @@
 ::view-transition-new(root) {
   animation-name: themeSwitch;
 }
- 
+
+p {
+  color: var(--text-accent)
+}
+
 ::view-transition-old(root),
 .dark::view-transition-old(root) {
   animation: none;
