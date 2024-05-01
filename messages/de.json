@@ -1,23 +1,23 @@
 {
-    "app": {
-        "work": {
-            "title": "Webentwickler",
-            "land": "Deutschland"
-        },
-        "history": {
-            "title": "Meine Geschichte",
-            "content": ""
-        },
-        "today": {
-            "title": "Heutzutage",
-            "content": "Heute bin ich 14 Jahre alt, ich lebe in Deutschland und programmiere immer noch am meisten im Webbereich, hauptsächlich mit Technologien wie NextJs mit Typescript."
-        }
+  "locale": "de",
+  "app": {
+    "work": {
+      "title": "Webentwickler",
+      "land": "Deutschland"
     },
-    "nav": {
-        "links": {
-            "work": "Arbeit",
-            "contact": "Kontakt"
-        }
+    "history": {
+      "title": "Meine Geschichte",
+      "content": "Ich habe vor ungefähr 3 Jahren mit dem Programmieren angefangen. Anfangs bin ich auf C++ gestoßen, ein sehr schwer zu lernende Programmiersprache für Anfänger. Somit kamm, dass ich leider schnell aufgehört hatte. Nach einem Monat wollte ich mich aber nocheinmal in dem Thema probieren, und ich habe angefangen mit HTML, Css und Javascript Websiten zu entwickeln."
+    },
+    "today": {
+      "title": "Heutzutage",
+      "content": "Heute bin ich 14 Jahre alt, ich lebe in Deutschland, programmiere und fahre Wakeboard in meiner Freizeit. Am meisten bin ich immer noch in der Webentwicklung unterwegs, dabei von dem programmieren großer Anwendungen wie einen eigenen Email Service bis zu kleineren wie dieses Portfolio."
     }
-
+  },
+  "nav": {
+    "links": {
+      "work": "Arbeit",
+      "contact": "Kontakt"
+    }
+  }
 }
