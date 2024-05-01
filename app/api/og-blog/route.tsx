@@ -1,8 +1,7 @@
 import { ImageResponse } from 'next/og';
 // App router includes @vercel/og.
 // No need to install it.
-export const alt = 'About Acme'
-export const size = {
+const size = {
   width: 1200,
   height: 630,
 }
