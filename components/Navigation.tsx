@@ -2,12 +2,12 @@
 import { Link } from "next-view-transitions";
 import ThemeSwitch from "./ThemeSwitch";
 import { useState } from "react";
-import {motion} from "framer-motion"
-export default function Navigation({work, land}: {work: string, land: string}) {
+import { motion } from "framer-motion"
+export default function Navigation({ work, land, locale }: { work: string, land: string, locale: string }) {
     const [menu, setMenu] = useState(false);
     return (
         <>
-            <div className="fixed flex-col items-center w-full h-full top-0 right-0 left-0 bg-[#e1e1e1] dark:bg-[#171717] z-10 hidden" style={{display: menu? "flex": "none"}} >
+            <div className="fixed flex-col items-center w-full h-full top-0 right-0 left-0 bg-[#e1e1e1] dark:bg-[#171717] z-10 hidden" style={{ display: menu ? "flex" : "none" }} >
                 <div className="lg:w-[700px] flex flex-col mt-[78px] space-y-16">
                     <div className="flex justify-between opacity-100 items-center">
                         <p>(hopefully) helping links</p>
@@ -17,32 +17,33 @@ export default function Navigation({work, land}: {work: string, land: string}) {
                             <div className="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
                         </div>
                     </div>
-                    <Link className="text-2xl animate-bottom_fade" href='/work'>Work</Link>
-                    <Link className="text-2xl animate-bottom_fade" href='/contact'>Contact</Link>
+                    <Link className="text-2xl animate-bottom_fade" href={`/${locale}/work`}><button className="text-white group relative h-12 rounded-full  bg-transparent px-4 "><span className="text-white relative inline-flex overflow-hidden"><div className="text-white translate-y-0 skew-y-0 transition duration-500 group-hover:-translate-y-[110%] group-hover:skew-y-12">lab</div><div className="text-white absolute translate-y-[120%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0">lab</div></span></button></Link>
+                    <Link className="text-2xl animate-bottom_fade" href={`/${locale}/work`}><button className="text-white group relative h-12 rounded-full  bg-transparent px-4 "><span className="text-white relative inline-flex overflow-hidden"><div className="text-white translate-y-0 skew-y-0 transition duration-500 group-hover:-translate-y-[110%] group-hover:skew-y-12">work</div><div className="text-white absolute translate-y-[120%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0">work</div></span></button></Link>
+                    <Link className="text-2xl animate-bottom_fade" href={`/${locale}/contact`}><button className="text-white group relative h-12 rounded-full  bg-transparent px-4 "><span className="text-white relative inline-flex overflow-hidden"><div className="text-white translate-y-0 skew-y-0 transition duration-500 group-hover:-translate-y-[110%] group-hover:skew-y-12">contact</div><div className="text-white absolute translate-y-[120%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0">contact</div></span></button></Link>
                 </div>
             </div>
             <div className="lg:w-[700px] flex flex-col space-y-16">
-                    <div className="flex items-center justify-between mt-16">
-                        <div className="flex items-center justify-center  space-x-3">
-                            <Link href={"https://github.com/i-am-henri"} target="_blank">
-                                <img className="w-[40px] h-[40px] relative top-1 hover:ring-[#ffffff] cursor-pointer hover:dark:ring-[#282828] ring-2 ring-[#ffffff80] dark:ring-[#282828c0]  ring-offset-2 hover:ring-offset-3 transition-all ring-offset-[#e1e1e1]  dark:ring-offset-[#171717] rounded-full" src="https://avatars.githubusercontent.com/u/98414850?v=4" alt="avatar" width={"40"} height={"40"} />
-                            </Link>
-                            <div className="flex flex-col">
-                                <h2 className="relative top-2 font-pacifico font-medium ">henri</h2>
-                                <p className="font-medium">{work} - {land}</p>
-                            </div>
+                <div className="flex items-center justify-between mt-16">
+                    <div className="flex items-center justify-center  space-x-3">
+                        <Link href={"/"}>
+                            <img className="w-[40px] h-[40px] relative top-1 hover:ring-[#ffffff] cursor-pointer hover:dark:ring-[#282828] ring-2 ring-[#ffffff80] dark:ring-[#282828c0]  ring-offset-2 hover:ring-offset-3 transition-all ring-offset-[#e1e1e1]  dark:ring-offset-[#171717] rounded-full" src="https://avatars.githubusercontent.com/u/98414850?v=4" alt="avatar" width={"40"} height={"40"} />
+                        </Link>
+                        <div className="flex flex-col">
+                            <h2 className="relative top-2 font-pacifico font-medium ">henri</h2>
+                            <p className="font-medium">{work} - {land}</p>
                         </div>
-                        <div className="flex space-x-2 items-center">
-                            <ThemeSwitch />
-                            <div className="flex group cursor-pointer flex-col items-center justify-center space-y-0.5 w-5 h-5" onClick={() => setMenu(true)}>
-                                <div className="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
-                                <div className="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
-                                <div className="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
-                            </div>
-                        </div>
-
                     </div>
+                    <div className="flex space-x-2 items-center">
+                        <ThemeSwitch />
+                        <div className="flex group cursor-pointer flex-col items-center justify-center space-y-0.5 w-5 h-5" onClick={() => setMenu(true)}>
+                            <div className="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
+                            <div className="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
+                            <div className="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
+                        </div>
+                    </div>
+
                 </div>
+            </div>
         </>
     )
 }
