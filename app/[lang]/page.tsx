@@ -53,8 +53,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                    <h2>Skills</h2>
-                    <p>I have 3 years of experience in the webdevelopment space.</p>
+                    <h2>{t("app.skills.title")}</h2>
+                    <p>{t("app.skills.content")}</p>
                 </div>
                 <hr className="border-t border-t-[#c1c1c1] dark:border-t-[#343434] w-full" />
 

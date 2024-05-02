@@ -19,6 +19,10 @@
     "today": {
       "title": "Heutzutage",
       "content": "Heute bin ich 14 Jahre alt, ich lebe in Deutschland, programmiere und fahre Wakeboard in meiner Freizeit. Am meisten bin ich immer noch in der Webentwicklung unterwegs, dabei von dem programmieren großer Anwendungen wie einen eigenen Email Service bis zu kleineren wie dieses Portfolio."
+    },
+    "skills": {
+      "title": "Skills",
+      "content": "Ich habe meine Fähigkeiten in der Web-Entwicklung konzentriert. Ich schreibe hauptsächlich Code in Typescript mit dem Framekwork nextjs von vercel. In der Tat: dieses Portfolio ist auch mit nextjs geschrieben. Ich programmiere auch mit anderen Frameworks wie qwik, react, react-native und electron."
     }
   },
   "nav": {

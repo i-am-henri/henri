@@ -13,12 +13,16 @@
       "land": "germany"
     },
     "history": {
-      "title": "my history",
-      "content": ""
+      "title": "My history",
+      "content": "I started programming about 3 years ago. Initially I came across C++, a very difficult programming language for beginners to learn. As a result, I unfortunately stopped quickly. After a month, however, I wanted to try my hand at it again, and I started developing websites using HTML, Css and Javascript."
     },
     "today": {
-      "title": "today",
-      "content": "lol"
+      "title": "Today",
+      "content": "Today, I'm 14 years old and mostly active in the web-space. In my free-time I code and ride Wakebaord, but also going to school. I now code for 3 years, 2 of them also in the backend. I'm creating small projects like this portfolio but also bigger ones, like my own email provider."
+    },
+    "skills": {
+      "title": "Skills",
+      "content": "I focused my skills in the web-development. I write mostly code in Typescript with the framekwork nextjs from vercel. In fact: this portfolio is written with nextjs too. I also code with other frameworks like qwik, react, react-native and electron."
     }
   },
   "nav": {
