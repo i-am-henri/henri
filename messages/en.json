@@ -1,29 +1,40 @@
 {
-    "locale": "en",
-    "app": {
-        "work": {
-            "title": "webdeveloper",
-            "land": "germany"
-        },
-        "history": {
-            "title": "my history",
-            "content": ""
-        },
-        "today": {
-            "title": "today",
-            "content": "lol"
-        }
-    },
-    "nav": {
-        "links": {
-            "work": "work",
-            "contact": "contact"
-        }
-    },
+  "navigation": {
+    "title": "(hopefully) helping links",
+    "work": "work",
+    "lab": "lab",
+    "contact": "contact",
+    "switchLocale": "german"
+  },
+  "locale": "en",
+  "app": {
     "work": {
-        "cookie": {
-            "title": "Cookie clicker",
-            "content": "A modern looking cookie clicker."
-        }
+      "title": "webdeveloper",
+      "land": "germany"
+    },
+    "history": {
+      "title": "my history",
+      "content": ""
+    },
+    "today": {
+      "title": "today",
+      "content": "lol"
     }
+  },
+  "nav": {
+    "links": {
+      "work": "work",
+      "contact": "contact"
+    }
+  },
+  "work": {
+    "cookie": {
+      "title": "Cookie clicker",
+      "content": "A modern looking cookie clicker."
+    }
+  },
+  "lab": {
+    "title": "component lab",
+    "description": "Components I've developed over the time."
+  }
 }

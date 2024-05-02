@@ -1,4 +1,11 @@
 {
+  "navigation": {
+    "title": "(hoffentlich) helfende Links",
+    "work": "Arbeit",
+    "lab": "lab",
+    "contact": "Kontakt",
+    "switchLocale": "Englisch"
+  },
   "locale": "de",
   "app": {
     "work": {
@@ -21,10 +28,14 @@
     }
   },
   "work": {
-      "cookie": {
-          "title": "Cookie clicker",
-          "content": "Ein modern aussehender cookie clicker.",
-          "link": "https://cookie.henri.gg"
-      }
+    "cookie": {
+      "title": "Cookie clicker",
+      "content": "Ein modern aussehender cookie clicker.",
+      "link": "https://cookie.henri.gg"
+    }
+  },
+  "lab": {
+    "title": "component lab",
+    "description": "Components die ich über die Zeit entwickelt habe."
   }
 }
