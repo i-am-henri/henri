@@ -19,5 +19,12 @@
       "work": "Arbeit",
       "contact": "Kontakt"
     }
+  },
+  "work": {
+      "cookie": {
+          "title": "Cookie clicker",
+          "content": "Ein modern aussehender cookie clicker.",
+          "link": "https://cookie.henri.gg"
+      }
   }
 }

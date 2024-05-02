@@ -19,6 +19,11 @@
             "work": "work",
             "contact": "contact"
         }
+    },
+    "work": {
+        "cookie": {
+            "title": "Cookie clicker",
+            "content": "A modern looking cookie clicker."
+        }
     }
-
 }

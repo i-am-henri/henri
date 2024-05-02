@@ -1,8 +1,7 @@
 "use client"
-import { Link } from "next-view-transitions";
 import ThemeSwitch from "./ThemeSwitch";
 import { useState } from "react";
-import { motion } from "framer-motion"
+import Link from "next/link";
 export default function Navigation({ work, land, locale }: { work: string, land: string, locale: string }) {
     const [menu, setMenu] = useState(false);
     return (
