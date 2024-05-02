@@ -17,7 +17,7 @@ export default function Work() {
                     <Link className="flex items-center" href={"https://git.new/henri"} target="_blank">
                         <GithubLogo className="mr-2"/> i-am-henri
                     </Link>
-                    <Link className="flex items-center" href={"discordapp.com/users/830760615789854742"} target="_blank">
+                    <Link className="flex items-center" href={"https://discordapp.com/users/830760615789854742"} target="_blank">
                         <DiscordLogo className="mr-2"/> @henri.web
                     </Link>
                     <Link className="flex items-center" href={"mailto:me@henri.gg"} target="_blank">
