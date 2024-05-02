@@ -37,5 +37,9 @@
   "lab": {
     "title": "component lab",
     "description": "Components die ich über die Zeit entwickelt habe."
+  },
+  "contact": {
+    "title": "Contact me",
+    "content": "I'm mostly active on GitHub, Discord an Email."
   }
 }
