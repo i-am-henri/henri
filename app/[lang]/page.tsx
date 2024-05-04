@@ -63,7 +63,7 @@ export default function Home() {
                         <p className="text-[#c1c1c1] dark:text-[#343434] hover:dark:text-[#ffffffc0] transition duration-300">handmade by henri</p>
                     </div>
                     <div className="flex">
-                        <Link href={"https://github.com/i-am-henri"} className="border border-[#c1c1c1] dark:border-[#343434] p-2 transition duration-300 hover:dark:text-[#ffffffc0] hover:dark:border-[#ffffffc0] rounded-full h-min" target="_blank"><GithubLogo  /></Link>
+                        <Link href={"https://github.com/i-am-henri/henri"} className="border border-[#c1c1c1] dark:border-[#343434] p-2 transition duration-300 hover:dark:text-[#ffffffc0] hover:dark:border-[#ffffffc0] rounded-full h-min" target="_blank"><GithubLogo  /></Link>
                     </div>
                 </footer>
             </div>
