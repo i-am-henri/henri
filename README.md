@@ -3,3 +3,5 @@
   # my portfolio
   This is the newest version of my portfolio, all of the code is open source and you are allowed to inspire you. PLEASE DO NOT COPY THE EXACT SAME CODE!
 </a>
+---
+this portfolio was inspired by [leerob](https://leerob.io), [emilkowalski](https://emailkowal.ski) and [paco](https://paco.me) 
