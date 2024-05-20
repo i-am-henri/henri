@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html>
-      <Suspense>
+      <Suspense fallback={<p>loading...</p>}>
         <PHProvider>
           <body className={inter.className}>
             <PostHogPageView />
