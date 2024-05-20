@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import pick from 'lodash/pick';
 import Theme from "@/components/ThemeProvider";
+import { PHProvider } from "@/components/PostHoqProvider";
+import PostHogPageView from "@/components/PostHoqPageView";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,8 +18,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html>
-      <body className={inter.className}><Theme>{children}</Theme></body>
-    </html>
+    <PHProvider>
+      <html>
+        <body className={inter.className}>
+          <PostHogPageView />
+          <Theme>
+            {children}
+            </Theme></body>
+      </html>
+    </PHProvider>
   );
 }
