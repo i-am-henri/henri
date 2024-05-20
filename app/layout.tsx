@@ -4,8 +4,11 @@ import "./globals.css";
 import pick from 'lodash/pick';
 import Theme from "@/components/ThemeProvider";
 import { PHProvider } from "@/components/PostHoqProvider";
-import PostHogPageView from "@/components/PostHoqPageView";
+const PostHogPageView = dynamic(() => import('@/components/PostHoqPageView'), {
+  ssr: false,
+})
 import { Suspense } from "react";
+import dynamic from "next/dynamic";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,15 +23,13 @@ export default function RootLayout({
 }>) {
   return (
     <html>
-      <Suspense fallback={<p>loading...</p>}>
-        <PHProvider>
-          <body className={inter.className}>
-            <PostHogPageView />
-            <Theme>
-              {children}
-            </Theme></body>
-        </PHProvider>
-      </Suspense>
+      <PHProvider>
+        <body className={inter.className}>
+          <PostHogPageView />
+          <Theme>
+            {children}
+          </Theme></body>
+      </PHProvider>
     </html>
   );
 }
