@@ -1,8 +1,20 @@
 "use client"
 import ThemeSwitch from "./ThemeSwitch";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-export default function Navigation({ work, land, locale }: { work: string, land: string, locale: string }) {
+export default function Navigation({ work, land, locale }: { work: string[], land: string, locale: string }) {
+    const randomNum = Math.floor(Math.random() * 3);
+    const [title, setTitle] = useState(work[randomNum])
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const randomNum = Math.floor(Math.random() * 3);
+            setTitle(work[randomNum])
+        }, 3000);
+    
+        // Cleanup interval on component unmount
+        return () => clearInterval(interval);
+      }, []);
+
     const [menu, setMenu] = useState(false);
     return (
         <>
@@ -29,7 +41,7 @@ export default function Navigation({ work, land, locale }: { work: string, land:
                         </Link>
                         <div className="flex flex-col">
                             <h2 className="relative top-2 font-pacifico font-medium ">henri</h2>
-                            <p className="font-medium">{work} - {land}</p>
+                            <p className="font-medium">{title} - {land}</p>
                         </div>
                     </div>
                     <div className="flex space-x-2 items-center">

@@ -42,9 +42,7 @@ export default function Home() {
     const t = useTranslations()
     return (
         <div className="min-h-screen flex flex-col items-center bg-[#e1e1e1] dark:bg-[#171717]">
-            <Script defer src="https://cloud.umami.is/script.js" data-website-id="51e2e9d7-e096-4156-92bf-89ae969b8637"></Script>
             <Navigation locale={t("locale")} land={t("app.work.land")} work={t("app.work.title")} />
-
             <div className="w-full p-5 sm:p-0 sm:w-[400px] md:w-[500px] lg:w-[700px] flex flex-col space-y-16 mt-16">
                 <div>
                     <h2>{t("app.history.title")}</h2>
@@ -66,7 +64,7 @@ export default function Home() {
                         <p className="text-[#c1c1c1] dark:text-[#343434] hover:dark:text-[#ffffffc0] transition duration-300">handmade by henri</p>
                     </div>
                     <div className="flex">
-                        <Link href={"https://github.com/i-am-henri"} className="border border-[#c1c1c1] dark:border-[#343434] p-2 transition duration-300 hover:dark:text-[#ffffffc0] hover:dark:border-[#ffffffc0] rounded-full h-min" target="_blank"><GithubLogo  /></Link>
+                        <Link href={"https://github.com/i-am-henri/henri"} className="border border-[#c1c1c1] dark:border-[#343434] p-2 transition duration-300 hover:dark:text-[#ffffffc0] hover:dark:border-[#ffffffc0] rounded-full h-min" target="_blank"><GithubLogo  /></Link>
                     </div>
                 </footer>
             </div>
