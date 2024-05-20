@@ -5,6 +5,7 @@ import pick from 'lodash/pick';
 import Theme from "@/components/ThemeProvider";
 import { PHProvider } from "@/components/PostHoqProvider";
 import PostHogPageView from "@/components/PostHoqPageView";
+import { Suspense } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,13 +20,15 @@ export default function RootLayout({
 }>) {
   return (
     <html>
-      <PHProvider>
-        <body className={inter.className}>
-          <PostHogPageView />
-          <Theme>
-            {children}
-          </Theme></body>
-      </PHProvider>
+      <Suspense>
+        <PHProvider>
+          <body className={inter.className}>
+            <PostHogPageView />
+            <Theme>
+              {children}
+            </Theme></body>
+        </PHProvider>
+      </Suspense>
     </html>
   );
 }
