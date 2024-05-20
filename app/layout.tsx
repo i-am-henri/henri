@@ -18,14 +18,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <PHProvider>
-      <html>
+    <html>
+      <PHProvider>
         <body className={inter.className}>
           <PostHogPageView />
           <Theme>
             {children}
-            </Theme></body>
-      </html>
-    </PHProvider>
+          </Theme></body>
+      </PHProvider>
+    </html>
   );
 }
