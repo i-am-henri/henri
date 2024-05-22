@@ -3,13 +3,12 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import pick from 'lodash/pick';
 import Theme from "@/components/ThemeProvider";
+import dynamic from "next/dynamic";
 import { PHProvider } from "@/components/PostHogProvider";
 
 const PostHogPageView = dynamic(() => import('@/components/PostHogPageView'), {
   ssr: false,
 })
-import { Suspense } from "react";
-import dynamic from "next/dynamic";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,15 +22,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html>
-      <body className={inter.className}>
-        <PHProvider>
+    <html lang="en">
+      <PHProvider>
+        <body>
           <PostHogPageView />
           <Theme>
             {children}
           </Theme>
-        </PHProvider>
-      </body>
+        </body>
+      </PHProvider>
     </html>
   );
 }
