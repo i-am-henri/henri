@@ -11,10 +11,8 @@ export default function LocaleLayout({
 }) {
     const t = useTranslations()
     return (
-        <html lang={locale}>
-            <body>
-                {children}
-            </body>
-        </html>
+       <div>
+        {children}
+       </div>
     );
 }

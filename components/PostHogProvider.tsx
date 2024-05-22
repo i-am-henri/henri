@@ -3,12 +3,13 @@
 import posthog from 'posthog-js'
 import { PostHogProvider } from 'posthog-js/react'
 
-if (typeof window !== 'undefined') {
-  posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
-    api_host: "/ingest",
-    ui_host: 'https://us.i.posthog.com' // or 'https://eu.i.posthog.com' if your PostHog is hosted in Europe
-  })
-}
+posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY as string, {
+  api_host: process.env.NODE_ENV === 'development' ? 'https://eu.posthog.com' : '/posthog',
+  // Disable in development
+  loaded: (posthog) => {
+      if (process.env.NODE_ENV === 'development') posthog.opt_out_capturing();
+  }
+});
 
 export function PHProvider({
   children,

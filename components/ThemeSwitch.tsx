@@ -1,7 +1,6 @@
 'use client';
 
-import { Moon, Sun } from '@phosphor-icons/react';
-import { motion } from 'framer-motion';
+import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useEffect } from 'react';
 
@@ -29,7 +28,7 @@ export default function ThemeSwitch() {
       if (!glbDocument.startViewTransition) switchTheme();
       glbDocument!.startViewTransition!(switchTheme);
     }} className='rounded-full border border-[#282828c0] dark:border-[#ffffffc0] p-2 cursor-pointer'>
-      {resolvedTheme == "dark" ? <Moon /> : <Sun />}
+      {resolvedTheme == "dark" ? <Moon className='h-4 w-4' /> : <Sun className='h-4 w-4' />}
     </div>
   );
 }

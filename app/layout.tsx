@@ -3,8 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import pick from 'lodash/pick';
 import Theme from "@/components/ThemeProvider";
-import { PHProvider } from "@/components/PostHoqProvider";
-const PostHogPageView = dynamic(() => import('@/components/PostHoqPageView'), {
+import { PHProvider } from "@/components/PostHogProvider";
+
+const PostHogPageView = dynamic(() => import('@/components/PostHogPageView'), {
   ssr: false,
 })
 import { Suspense } from "react";
