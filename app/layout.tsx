@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import pick from 'lodash/pick';
 import Theme from "@/components/ThemeProvider";
-import dynamic from "next/dynamic";
-import { PHProvider } from "@/components/PostHogProvider";
+import Script from "next/script";
 
-const PostHogPageView = dynamic(() => import('@/components/PostHogPageView'), {
-  ssr: false,
-})
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,14 +18,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <PHProvider>
-        <body>
-          <PostHogPageView />
-          <Theme>
-            {children}
-          </Theme>
-        </body>
-      </PHProvider>
+      <head>
+        <Script data-website-id="51e2e9d7-e096-4156-92bf-89ae969b8637" defer src="/umami" />
+      </head>
+      <body className={inter.className}>
+        <Theme>
+          {children}
+        </Theme>
+      </body>
     </html>
   );
 }
