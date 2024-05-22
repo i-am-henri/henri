@@ -13,7 +13,7 @@ const nextConfig = {
                 },
                 {
                     source: '/posthog/:path*/',
-                    destination: 'https://eu.posthog.com/:path*/'
+                    destination: 'https://eu.i.posthog.com/:path*/'
                 }
             ]
         },
