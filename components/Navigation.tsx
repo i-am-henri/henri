@@ -2,7 +2,6 @@
 import ThemeSwitch from "./ThemeSwitch";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-
 export default function Navigation({ work, land, locale }: { work: string[], land: string, locale: string }) {
     const randomNum = Math.floor(Math.random() * 3);
     const [title, setTitle] = useState(work[randomNum])
@@ -42,9 +41,11 @@ export default function Navigation({ work, land, locale }: { work: string[], lan
                         </Link>
                         <div className="flex flex-col">
                             <h2 className="relative top-2 font-pacifico font-medium ">henri</h2>
+                            <p className="font-medium">{title} - {land}</p>
                         </div>
                     </div>
                     <div className="flex space-x-2 items-center">
+                        <ThemeSwitch />
                         <div className="flex group cursor-pointer flex-col items-center justify-center space-y-0.5 w-5 h-5" onClick={() => setMenu(true)}>
                             <div className="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
                             <div className="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>

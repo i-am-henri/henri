@@ -1,16 +1,12 @@
-/** @type {import('next').NextConfig} */
+
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin();
+
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-    async rewrites() {
-        return [
-            {
-                source: "/umami",
-                destination: "https://cloud.umami.is/script.js",
-            },
-        ];
-    },
+   output: "dist"
+    
 };
 
 export default withNextIntl(nextConfig)
