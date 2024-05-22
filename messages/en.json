@@ -10,7 +10,10 @@
   "app": {
     "work": {
       "title": "webdeveloper",
-      "land": "germany"
+      "secondtitle": "web designer",
+      "thirdtitle": "frontend developer",
+      "fourttitle": "backend developer",
+      "land": "Deutschland"
     },
     "history": {
       "title": "My history",
