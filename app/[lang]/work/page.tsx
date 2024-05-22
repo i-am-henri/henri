@@ -12,7 +12,6 @@ export default function Work() {
                     <h2>{t("work.cookie.title")}</h2>
                     <p>{t("work.cookie.content")}</p>
                 </Link>
-
             </div>
         </div>
     )
