@@ -5,7 +5,7 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-   output: "dist"
+   output: "out"
     
 };
 
