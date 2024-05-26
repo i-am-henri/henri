@@ -12,7 +12,7 @@ export default function Work() {
                     <h2>{t("lab.title")}</h2>
                     <p>{t("lab.description")}</p>
                 </div>
-                <p className="text-[#c1c1c1] dark:text-[#343434]">nothing here... for now!</p>
+                <h2>File Tree</h2>
 
             </div>
         </div>
