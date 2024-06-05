@@ -57,7 +57,12 @@ export default function Home() {
                     <h2>{t("app.skills.title")}</h2>
                     <p>{t("app.skills.content")}</p>
                 </div>
-                <hr className="border-t border-t-[#c1c1c1] dark:border-t-[#343434] w-full" />
+                
+                <div>
+                    <h2>{t("app.design.title")}</h2>
+                    <p>{t("app.design.content")}</p>
+                </div>
+                <hr className="border-t border-t-[#c1c1c1] zdark:border-t-[#343434] w-full" />
 
                 <footer className="text-[#c1c1c1] dark:text-[#343434] flex justify-between">
                     <div>

@@ -41,7 +41,7 @@ export default function Navigation({ work, land, locale }: { work: string[], lan
                         </Link>
                         <div className="flex flex-col">
                             <h2 className="relative top-2 font-pacifico font-medium ">henri</h2>
-                            <p className="font-medium">{title} - {land}</p>
+                            <p className="font-medium hidden sm:block">{title} - {land}</p>
                         </div>
                     </div>
                     <div className="flex space-x-2 items-center">
