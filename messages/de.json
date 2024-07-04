@@ -26,6 +26,10 @@
     "skills": {
       "title": "Skills",
       "content": "Ich habe meine Fähigkeiten in der Web-Entwicklung konzentriert. Ich schreibe hauptsächlich Code in Typescript mit dem Framekwork nextjs von vercel. In der Tat: dieses Portfolio ist auch mit nextjs geschrieben. Ich programmiere auch mit anderen Frameworks wie qwik, react, react-native und electron."
+    },
+    "design": {
+      "title": "Meine Leidenschaft für Webdesign",
+      "content": "Seitdem ich programmiere, interessiere ich mich zudem auch für das Webdesign. Ich finde es immer wieder sehr interesannt, was andere Menschen auf die Beine stellen können, leider sehen meine Figma Designs oft nicht so gut aus."
     }
   },
   "nav": {

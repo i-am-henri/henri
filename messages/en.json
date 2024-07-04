@@ -26,6 +26,10 @@
     "skills": {
       "title": "Skills",
       "content": "I focused my skills in the web-development. I write mostly code in Typescript with the framekwork nextjs from vercel. In fact: this portfolio is written with nextjs too. I also code with other frameworks like qwik, react, react-native and electron."
+    },
+    "design": {
+      "title": "My passion for design",
+      "content": "When I started programming for the web, I also started to be interested in webdesign. I always like to see what designs are people able to make. Unfortunelly, my personal figma designs aren't that good."
     }
   },
   "nav": {
