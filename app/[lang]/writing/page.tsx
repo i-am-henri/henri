@@ -1,17 +1,14 @@
-import { notFound } from "next/navigation"
 import { getPosts } from "./[slug]/server"
+import { LangLink } from "@/components/LangLink"
 
 export default async function Blog() {
-    const posts = await getPosts("en")
-    if (posts.length == 0) {
-        console.log("kein Inhalt")
-    }
+    const posts = await getPosts()
     return <div>
-        {posts.map((post) => (
-            <div key={post.title}>
+        {posts.length !== 0 && posts.map((post) => (
+            <LangLink href={`writing/${post.link}`} key={post.title} className="flex flex-col">
                 {post.title}
                 {post.description}
-            </div>
-        ))}
+            </LangLink>
+        )) || <p>There are no posts right now.</p>}
     </div>
 }

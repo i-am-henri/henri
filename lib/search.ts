@@ -33,7 +33,6 @@ interface SearchData {
     title: string,
     description: string,
     date: string,
-    author: string,
     content: string
 }
 
@@ -54,7 +53,6 @@ for await (const file of files) {
         title: string,
         description: string,
         date: string,
-        author: string
     }
     const content = matter(raw).content
 
