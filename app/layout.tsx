@@ -8,7 +8,7 @@ import { GeistSans } from "geist/font/sans";
 
 export const metadata: Metadata = {
   title: "henri",
-  description: "Hey, I'm Henri a webdeveloper based in germany.",
+  description: "Hey, I'm Henri a webdeveloper based in germany. I'm 14 years old and I'm coding for now 3 years. I found my passion in the full-stack web development.",
 };
 
 export default function RootLayout({

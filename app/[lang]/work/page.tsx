@@ -5,14 +5,15 @@ import Link from "next/link"
 export default function Work() {
     const t = useTranslations()
     return (
-        <div className="min-h-screen flex flex-col items-center bg-[#e1e1e1] dark:bg-[#171717]">
-            <Navigation locale={t("locale")} land={t("app.work.land")} work={[t("app.work.title"), t("app.work.secondtitle"), t("app.work.thirdtitle"), t("app.work.fourttitle")]} />
-            <div className="w-full p-5 sm:p-0 sm:w-[400px] md:w-[500px] lg:w-[700px] flex flex-col space-y-16 mt-16">
-                <Link href={t("work.cookie.link")} target="_blank">
-                    <h2>{t("work.cookie.title")}</h2>
-                    <p>{t("work.cookie.content")}</p>
-                </Link>
-            </div>
+        <div>
+            <Link href={t("work.cookie.link")} target="_blank" className="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{t("work.cookie.title")}</h2>
+                <p className="font-normal text-gray-700 dark:text-gray-400">{t("work.cookie.content")}</p>
+            </Link>
+            <Link href={t("work.newProject.link")} target="_blank" className="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{t("work.newProject.title")}heyy</h2>
+                <p className="font-normal text-gray-700 dark:text-gray-400">{t("work.newProject.content")}hallp</p>
+            </Link>
         </div>
     )
 }

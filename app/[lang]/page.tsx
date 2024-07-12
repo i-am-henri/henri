@@ -41,38 +41,25 @@ export const metadata: Metadata = {
 export default function Home() {
     const t = useTranslations()
     return (
-        <div className="min-h-screen flex flex-col items-center bg-[#e1e1e1] dark:bg-[#171717]">
-            <Navigation locale={t("locale")} land={t("app.work.land")} />
-            <div className="w-full p-5 sm:p-0 sm:w-[400px] md:w-[500px] lg:w-[700px] flex flex-col space-y-16 mt-16">
-                <div>
-                    <h2>{t("app.history.title")}</h2>
-                    <p>{t("app.history.content")}</p>
-                </div>
-                <div>
-                    <h2>{t("app.today.title")}</h2>
-                    <p>{t("app.today.content")}</p>
-                </div>
-
-                <div>
-                    <h2>{t("app.skills.title")}</h2>
-                    <p>{t("app.skills.content")}</p>
-                </div>
-                
-                <div>
-                    <h2>{t("app.design.title")}</h2>
-                    <p>{t("app.design.content")}</p>
-                </div>
-                <hr className="border-t border-t-[#c1c1c1] dark:border-t-[#343434] w-full" />
-
-                <footer className="text-[#c1c1c1] dark:text-[#343434] flex justify-between">
-                    <div>
-                        <p className="text-[#c1c1c1] dark:text-[#343434] hover:dark:text-[#ffffffc0] transition duration-300">handmade by henri</p>
-                    </div>
-                    <div className="flex">
-                        <Link href={"https://github.com/i-am-henri/henri"} className="border border-[#c1c1c1] dark:border-[#343434] p-2 transition duration-300 hover:dark:text-[#ffffffc0] hover:dark:border-[#ffffffc0] rounded-full h-min" target="_blank"><GithubLogo  /></Link>
-                    </div>
-                </footer>
+        <>
+            <div>
+                <h2>{t("app.history.title")}</h2>
+                <p>{t("app.history.content")}</p>
             </div>
-        </div>
+            <div>
+                <h2>{t("app.today.title")}</h2>
+                <p>{t("app.today.content")}</p>
+            </div>
+
+            <div>
+                <h2>{t("app.skills.title")}</h2>
+                <p>{t("app.skills.content")}</p>
+            </div>
+
+            <div>
+                <h2>{t("app.design.title")}</h2>
+                <p>{t("app.design.content")}</p>
+            </div>
+        </>
     )
 }

@@ -40,9 +40,10 @@ export default function Navigation({ land, locale }: { land: string, locale: str
                     </div>
                     <div className="flex space-x-2 items-center">
                         <div className="hidden md:flex space-x-3">
+                            <Link href={`/${locale}/`} className={cn(theme.theme === "dark"? "text-[#aaaaaa] hover:text-white transition": "")}>home</Link>
                             <Link href={`/${locale}/lab`} className={cn(theme.theme === "dark"? "text-[#aaaaaa] hover:text-white transition": "")}>lab</Link>
                             <Link href={`/${locale}/work`} className={cn(theme.theme === "dark"? "text-[#aaaaaa] hover:text-white transition": "")}>work</Link>
-                            <Link href={`/${locale}/writings`} className={cn(theme.theme === "dark"? "text-[#aaaaaa] hover:text-white transition": "")}>blog</Link>
+                            <Link href={`/${locale}/writing`} className={cn(theme.theme === "dark"? "text-[#aaaaaa] hover:text-white transition": "")}>blog</Link>
                         </div>
                         <ThemeSwitch />
                         <div className="flex group cursor-pointer flex-col items-center justify-center space-y-0.5 w-5 h-5 md:hidden" onClick={() => setMenu(true)}>

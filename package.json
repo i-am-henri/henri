@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@biomejs/biome": "^1.8.3",
     "@phosphor-icons/react": "^2.1.7",
     "@vercel/og": "^0.6.2",
     "clsx": "^2.1.1",
