@@ -2,22 +2,15 @@
 import ThemeSwitch from "./ThemeSwitch";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-export default function Navigation({ work, land, locale }: { work: string[], land: string, locale: string }) {
-    const randomNum = Math.floor(Math.random() * 3);
-    const [title, setTitle] = useState(work[randomNum])
-    useEffect(() => {
-        const interval = setInterval(() => {
-            const randomNum = Math.floor(Math.random() * 3);
-            setTitle(work[randomNum])
-        }, 3000);
-    
-        // Cleanup interval on component unmount
-        return () => clearInterval(interval);
-      }, []);
-
+import { useTheme } from "next-themes";
+import { cn } from "@/lib/utils";
+export default function Navigation({ land, locale }: { land: string, locale: string }) {
+   
     const [menu, setMenu] = useState(false);
+    const theme = useTheme()
     return (
         <>
+            {/* The menu */}
             <div className="fixed flex-col items-center w-full h-full top-0 right-0 left-0 bg-[#e1e1e1] dark:bg-[#171717] z-10 hidden" style={{ display: menu ? "flex" : "none" }} >
                 <div className="w-full p-5 sm:p-0 sm:w-[400px] md:w-[500px] lg:w-[700px] flex flex-col mt-[78px] space-y-16">
                     <div className="flex justify-between opacity-100 items-center">
@@ -33,6 +26,7 @@ export default function Navigation({ work, land, locale }: { work: string[], lan
                     <Link className="text-2xl animate-bottom_fade" href={`/${locale}/contact`}><button className="text-black dark:text-white group relative h-12 rounded-full  bg-transparent px-4 "><span className="text-white relative inline-flex overflow-hidden"><div className="text-black dark:text-white translate-y-0 skew-y-0 transition duration-500 group-hover:-translate-y-[110%] group-hover:skew-y-12">contact</div><div className="text-black dark:text-white absolute translate-y-[120%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0">contact</div></span></button></Link>
                 </div>
             </div>
+            {/* The header */}
             <div className="w-full p-5 sm:p-0 sm:w-[400px] md:w-[500px] lg:w-[700px] flex flex-col space-y-16">
                 <div className="flex items-center justify-between mt-16">
                     <div className="flex items-center justify-center  space-x-3">
@@ -41,12 +35,17 @@ export default function Navigation({ work, land, locale }: { work: string[], lan
                         </Link>
                         <div className="flex flex-col">
                             <h2 className="relative top-2 font-pacifico font-medium ">henri</h2>
-                            <p className="font-medium hidden sm:block">{title} - {land}</p>
+                            <p className="font-medium hidden sm:block">{land}</p>
                         </div>
                     </div>
                     <div className="flex space-x-2 items-center">
+                        <div className="hidden md:flex space-x-3">
+                            <Link href={`/${locale}/lab`} className={cn(theme.theme === "dark"? "text-[#aaaaaa] hover:text-white transition": "")}>lab</Link>
+                            <Link href={`/${locale}/work`} className={cn(theme.theme === "dark"? "text-[#aaaaaa] hover:text-white transition": "")}>work</Link>
+                            <Link href={`/${locale}/writings`} className={cn(theme.theme === "dark"? "text-[#aaaaaa] hover:text-white transition": "")}>blog</Link>
+                        </div>
                         <ThemeSwitch />
-                        <div className="flex group cursor-pointer flex-col items-center justify-center space-y-0.5 w-5 h-5" onClick={() => setMenu(true)}>
+                        <div className="flex group cursor-pointer flex-col items-center justify-center space-y-0.5 w-5 h-5 md:hidden" onClick={() => setMenu(true)}>
                             <div className="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
                             <div className="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>
                             <div className="h-1 w-1 group-active:opacity-60 group-hover:dark:bg-[#ffffffc0] transition-all duration-300 rounded-full bg-black dark:bg-white"></div>

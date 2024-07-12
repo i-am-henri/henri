@@ -22,6 +22,8 @@ h2 {
   font-size: large;
 }
 
+/* The darkmode switch */
+
 ::view-transition-group(root) {
   animation-duration: 1.25s;
 }

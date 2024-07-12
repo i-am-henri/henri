@@ -42,7 +42,7 @@ export default function Home() {
     const t = useTranslations()
     return (
         <div className="min-h-screen flex flex-col items-center bg-[#e1e1e1] dark:bg-[#171717]">
-            <Navigation locale={t("locale")} land={t("app.work.land")} work={[t("app.work.title"), t("app.work.secondtitle"), t("app.work.thirdtitle"), t("app.work.fourttitle")]} />
+            <Navigation locale={t("locale")} land={t("app.work.land")} />
             <div className="w-full p-5 sm:p-0 sm:w-[400px] md:w-[500px] lg:w-[700px] flex flex-col space-y-16 mt-16">
                 <div>
                     <h2>{t("app.history.title")}</h2>
@@ -62,7 +62,7 @@ export default function Home() {
                     <h2>{t("app.design.title")}</h2>
                     <p>{t("app.design.content")}</p>
                 </div>
-                <hr className="border-t border-t-[#c1c1c1] zdark:border-t-[#343434] w-full" />
+                <hr className="border-t border-t-[#c1c1c1] dark:border-t-[#343434] w-full" />
 
                 <footer className="text-[#c1c1c1] dark:text-[#343434] flex justify-between">
                     <div>
