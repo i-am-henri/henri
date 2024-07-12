@@ -12,7 +12,7 @@ export default function Navigation({ land, locale }: { land: string, locale: str
         <>
             {/* The menu */}
             <div className="fixed flex-col items-center w-full h-full top-0 right-0 left-0 bg-[#e1e1e1] dark:bg-[#171717] z-10 hidden" style={{ display: menu ? "flex" : "none" }} >
-                <div className="w-full p-5 sm:p-0 sm:w-[400px] md:w-[500px] lg:w-[700px] flex flex-col mt-[78px] space-y-16">
+                <div className="w-full p-5 sm:p-0 sm:w-[400px] md:w-[500px] lg:w-[650px] flex flex-col mt-[78px] space-y-16">
                     <div className="flex justify-between opacity-100 items-center">
                         <p>(hopefully) helping links</p>
                         <div onClick={() => setMenu(false)} className="flex z-20 group cursor-pointer flex-col items-center justify-center space-y-0.5 w-5 h-5" >
@@ -27,7 +27,7 @@ export default function Navigation({ land, locale }: { land: string, locale: str
                 </div>
             </div>
             {/* The header */}
-            <div className="w-full p-5 sm:p-0 sm:w-[400px] md:w-[500px] lg:w-[700px] flex flex-col space-y-16">
+            <div className="w-full p-5 sm:p-0 sm:w-[400px] md:w-[500px] lg:w-[650px] flex flex-col space-y-16">
                 <div className="flex items-center justify-between mt-16">
                     <div className="flex items-center justify-center  space-x-3">
                         <Link href={"/"}>
