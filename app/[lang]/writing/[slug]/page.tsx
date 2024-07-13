@@ -3,7 +3,7 @@ import { getPost } from "./server";
 import { notFound } from "next/navigation";
 
 export default async function Post({params}: {params: {slug: string}}) {
-    const post = await getPost(params.slug + ".mdx")
+    const post = await getPost(params.slug)
 
     if (!post) {
         notFound()
@@ -12,7 +12,7 @@ export default async function Post({params}: {params: {slug: string}}) {
 
     return (
         <div> 
-            <MDXRemote source={post.content} />
+            <MDXRemote source={post.content} components={post.components} />
         </div>
     )
 }

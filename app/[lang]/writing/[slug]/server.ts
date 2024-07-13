@@ -1,5 +1,6 @@
 import matter from "gray-matter"
 import fs from "node:fs"
+import type React from "react"
 
 interface FrontMatter {
     title: string,
@@ -36,7 +37,11 @@ export async function getPosts(): Promise<FrontMatterGallery[]> {
 }
 
 interface Content extends FrontMatter {
-    content: string
+    content: string,
+    components: {
+        // biome-ignore lint/suspicious/noExplicitAny: We can't now, which props the user wants to use for his/her component 
+        [key: string]: (...args: any[]) => JSX.Element;
+    }
 }
 
 /**
@@ -45,10 +50,14 @@ interface Content extends FrontMatter {
  * name as the .mdx file.
  */
 export async function getPost(path: string): Promise<Content | undefined> {
-    const raw: string = (await fs.promises.readFile(`content/posts/${path}`)).toString()
+    const raw: string = (await fs.promises.readFile(`content/posts/${path}.mdx`)).toString()
+    console.log(path)
+    const componentFile = await import(`content/posts/${path}.ts`)
+    const components = componentFile.default
     const post = matter(raw)
     return {
         ...post.data as FrontMatter,
-        content: post.content as string
+        content: post.content as string,
+        components
     }
 }
