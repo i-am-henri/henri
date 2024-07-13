@@ -16,7 +16,7 @@ interface FrontMatterGallery extends FrontMatter {
  * @returns {FrontMatterGallery[]} - a array with the frontmatter
  */
 export async function getPosts(): Promise<FrontMatterGallery[]> {
-    let frontMatterArray: FrontMatterGallery[] = []
+    const frontMatterArray: FrontMatterGallery[] = []
     // fetchs the files in the content folder in the language
     const files: string[] = await fs.promises.readdir("content/posts/")
 
@@ -46,12 +46,7 @@ interface Content extends FrontMatter {
  */
 export async function getPost(path: string): Promise<Content | undefined> {
     const raw: string = (await fs.promises.readFile(`content/posts/${path}`)).toString()
-
     const post = matter(raw)
-
-    
-
-
     return {
         ...post.data as FrontMatter,
         content: post.content as string
