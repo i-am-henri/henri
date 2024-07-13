@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import ThemeSwitch from "@/components/ThemeSwitch";
 import Navigation from "@/components/Navigation";
 import Head from "next/head";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { GithubLogo } from "@phosphor-icons/react/dist/ssr";
 import Script from "next/script";
 

@@ -53,7 +53,6 @@ export async function getPost(path: string): Promise<Content | undefined> {
     const raw: string = (await fs.promises.readFile(`content/posts/${path}.mdx`)).toString()
     console.log(path)
     const componentFile = await import(`@/content/posts/${path}.tsx`)
-    console.log(componentFile)
     const components = componentFile.default
     const post = matter(raw)
     return {
