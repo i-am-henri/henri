@@ -6,6 +6,7 @@ interface FrontMatter {
     title: string,
     description: string,
     date: string,
+    image: string
 }
 
 interface FrontMatterGallery extends FrontMatter {
@@ -23,6 +24,7 @@ export async function getPosts(): Promise<FrontMatterGallery[]> {
 
     // iterate over the strings in the files variable and reads the frontmatter
     for await (const file of files) {
+        if (file.endsWith(".tsx")) break
         const raw: string = (await fs.promises.readFile(`content/posts/${file}`)).toString()
 
         const metadata = matter(raw).data as FrontMatter
@@ -51,7 +53,6 @@ interface Content extends FrontMatter {
  */
 export async function getPost(path: string): Promise<Content | undefined> {
     const raw: string = (await fs.promises.readFile(`content/posts/${path}.mdx`)).toString()
-    console.log(path)
     const componentFile = await import(`@/content/posts/${path}.tsx`)
     const components = componentFile.default
     const post = matter(raw)

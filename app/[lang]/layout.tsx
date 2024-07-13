@@ -5,7 +5,7 @@ import { GithubLogo } from "@phosphor-icons/react/dist/ssr";
 import { Palette } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import React from "react";
+import type React from "react";
 
 export default function LocaleLayout({
     children,
