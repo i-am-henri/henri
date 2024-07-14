@@ -6,7 +6,9 @@ interface FrontMatter {
     title: string,
     description: string,
     date: string,
-    image: string
+    image: string,
+    alt: string,
+    ready: boolean,
 }
 
 interface FrontMatterGallery extends FrontMatter {

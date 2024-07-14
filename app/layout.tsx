@@ -3,8 +3,9 @@ import "./globals.css";
 import Theme from "@/components/ThemeProvider";
 import Script from "next/script";
 import { GeistSans } from "geist/font/sans";
-import React from "react"
+import type React from "react"
 import { useTranslations } from "next-intl";
+import { LayoutTransition } from "@/components/LayoutTransition";
 
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ export default function RootLayout({
       </head>
       <body className={GeistSans.className}>
         <Theme>
-          {React.cloneElement(children as JSX.Element, { locale: t("locale") })}
+          {children}
         </Theme>
       </body>
     </html>
