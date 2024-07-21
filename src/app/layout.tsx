@@ -1,8 +1,10 @@
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import "@/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
+import { ThemeProvider } from "next-themes"
 
 export const metadata: Metadata = {
   title: "henri",
@@ -15,10 +17,15 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
-      <body className="bg-[#121212] min-h-screen w-full flex flex-col items-center">
-        <Header />
-        {children}
-      </body>
+        <body>
+          <div className="min-h-screen w-full flex flex-col items-center">
+            <ThemeProvider>
+              <Header />
+              {children}
+              <Footer />
+            </ThemeProvider>
+          </div>
+        </body>
     </html>
   );
 }
