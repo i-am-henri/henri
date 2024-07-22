@@ -1,6 +1,7 @@
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { Newsreader } from "next/font/google"
 import Img from "next/image"
+import Link from "next/link"
 const newsreader = Newsreader({
   subsets: ["latin"],
   style: "italic"
@@ -35,6 +36,15 @@ export default function Page() {
         </Tooltip>.
       </p>
       
+      <div className="space-y-2 flex flex-col">
+        <p>There are <span className={newsreader.className}>no dump questions</span>... so contact me if you need smthg</p>
+        <div className="flex space-x-2">
+          <Link href="https://github.com/i-am-henri">GitHub</Link>
+          <Link href="">Discord</Link>
+          <Link href="mailto:henri@selfmail.app">Email</Link>
+          <Link href="https://layers.to/henrii">Layers</Link>
+        </div>
+      </div>
     </main>
   )
 }
