@@ -1,12 +1,16 @@
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { Newsreader } from "next/font/google"
+import { allPosts } from "content-collections";
 import Img from "next/image"
 import Link from "next/link"
+
 const newsreader = Newsreader({
   subsets: ["latin"],
   style: "italic"
 })
+
 export default function Page() {
+  console.log(allPosts.map((p) => p._meta.fileName))
   return (
     <main className="lg:w-[500px] space-y-12">
       <p>
@@ -35,9 +39,18 @@ export default function Page() {
           </TooltipContent>
         </Tooltip>.
       </p>
-      
+
+
+      {/* Contact section */}
       <div className="space-y-2 flex flex-col">
-        <p>There are <span className={newsreader.className}>no dump questions</span>... so contact me if you need smthg</p>
+        <p>There are <Tooltip>
+          <TooltipTrigger>
+            <span className={newsreader.className}>no dump questions</span>
+          </TooltipTrigger>
+          <TooltipContent className={newsreader.className}>
+            mostly...
+          </TooltipContent>
+        </Tooltip>... so contact me if you need smthg</p>
         <div className="flex space-x-2">
           <Link href="https://github.com/i-am-henri">GitHub</Link>
           <Link href="">Discord</Link>

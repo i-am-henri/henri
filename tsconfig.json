@@ -26,7 +26,8 @@
     /* Path Aliases */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "content-collections": ["./.content-collections/generated"]
     }
   },
   "include": [
