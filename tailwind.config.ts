@@ -23,6 +23,10 @@ const config = {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "var(--background)",
+        link: {
+          DEFAULT: "var(--link)",
+          hover: "var(--link-hover)"
+        },
         foreground: "hsl(var(--foreground))",
         text: "var(--text)",
         primary: {

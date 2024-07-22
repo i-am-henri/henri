@@ -6,6 +6,8 @@
   :root {
     --background: #f4f4f4;
     --text: #090909;
+    --link: #090909;
+    --link-hover: #232323;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
@@ -35,6 +37,8 @@
   .dark {
     --background: #121212;
     --text: #f4f4f4;
+    --link: #cccccc;
+    --link-hover: #f4f4f4;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -61,7 +65,11 @@
   }
 }
 
+
 @layer base {
+  a {
+    @apply text-link hover:text-link-hover  duration-300 transition-colors
+  }
   * {
     @apply border-border text-text;
   }
