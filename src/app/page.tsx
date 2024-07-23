@@ -12,6 +12,7 @@ import React from "./icons/react";
 import Figma from "./icons/figma";
 import Qwik from "./icons/qwik";
 import Vercel from "./icons/vercel"
+import ProjectCard from "./project";
 
 const newsreader = Newsreader({
   subsets: ["latin"],
@@ -96,7 +97,8 @@ export default function Page() {
       {/* Project section */}
       <div className="space-y-2 flex flex-col">
         <div className="flex flex-col space-y-1">
-          
+          <ProjectCard title="Selfmail" github="https://github.com/i-am-henri/selfmail" description="Selfmail is a open-source and selfhostable email service." link="https://selfmail.app" />
+          <ProjectCard title="canvasly" github="https://github.com/i-am-henri/canvasly" description="A power point alternative, with templates for quick workflows." link="https://canvasly.app" />
         </div>
         <p>These are projects I've made in the last 3 years. Most of them are open-source and avaiable on github.</p>
       </div>
