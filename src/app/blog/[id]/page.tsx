@@ -1,55 +1,27 @@
+"use client"
 import { notFound } from "next/navigation"
-import fs from "fs/promises"
 import matter from "gray-matter"
-import { MDXRemote } from "next-mdx-remote/rsc"
+import { MDXContent } from "@content-collections/mdx/react";
+import {allPosts} from "content-collections"
+
 export const runtime = "nodejs"
 
-export default async function BlogPost({
+export default function BlogPost({
     params
 }: {
     params: {
-        id: string | undefined
+        id: string 
     }
 }) {
-
     if (!params.id) notFound()
-
-    const post = await getPost<{
-        title: string,
-        date: string
-    }>({
-        folder: "./src/posts",
-        id: params.id
-    })
+    const post = allPosts.find((post) => post._meta.fileName.startsWith(params.id))
+    console.log(post)
+    if (!post) notFound()
 
     return (
         <div className="flex flex-col space-y-6 w-[500px]">
-            <h1>{post.frontMatter.title}</h1>
-            <MDXRemote source={post.content} />
+            <h1>{post.title}</h1>
+            <MDXContent code={post.body} />
         </div>
     )
-}
-
-
-async function getPost<T extends {}>({
-    folder,
-    id
-}:{
-    folder: string,
-    id: string
-}) {
-    const file = await fs.readFile(`${folder}/${id}.mdx`)
-
-    if (!file) notFound()
-
-    const data = matter(file)
-
-    return {
-        frontMatter: data.data as T,
-        meta: {
-            slug: id,
-            file: `${id}.mdx`
-        },
-        content: data.content
-    }
 }
