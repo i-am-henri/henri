@@ -2,23 +2,25 @@ import { Schema, z, ZodObject, ZodSchema, ZodString } from "zod"
 import fs from "node:fs/promises"
 import matter from "gray-matter"
 import { title } from "node:process"
-export const runtime = "nodejs"
+import ProjectCard from "../project"
+import BlogPost from "./post"
 
+export const runtime = "nodejs"
 
 export default async function Blog() {
     const posts = await fetchAllPosts({
         folder: "./src/posts/",
         schema: {
-            title: z.string()
+            title: z.string(),
+            date: z.string(),
         }
     })
     return (
-        <div className="space-y-12 flex flex-col lg:w-[500px]">
+        <div className="space-y-6 flex flex-col lg:w-[500px]">
+            <p>I really like good articles... so I try making good one by myself.</p>
             {
                 posts.map((post) => (
-                    <div key={post.frontmatter.title}>
-                        {post.frontmatter.title}
-                    </div>
+                    <BlogPost title={post.frontmatter.title} date={post.frontmatter.date} slug={post.meta.slug} key={post.meta.slug} />
                 ))
             }
         </div>
@@ -33,7 +35,6 @@ export async function fetchAllPosts({
     }
     folder: string
 }) {
-    "use server"
     type InferSchema<T extends { [key: string]: ZodSchema<any> }> = {
         [K in keyof T]: z.infer<T[K]>;
       };
