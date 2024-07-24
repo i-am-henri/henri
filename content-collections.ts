@@ -11,11 +11,15 @@ const posts = defineCollection({
   }),
   transform: async (document, context) => {
     const body = await compileMDX(context, document);
-    console.log(body)
+
+    //TODO: implement a view counter
     return {
       ...document,
       body,
     };
+  },
+  onSuccess: (e) => {
+    console.log(`❇️  success by getting documents: "${e.map((e) => e._meta.fileName.split(".")[0])}"`)
   }
 });
  
