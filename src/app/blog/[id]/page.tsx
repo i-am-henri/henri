@@ -12,11 +12,6 @@ const newsreader = Newsreader({
     style: "italic"
 })
 
-const jMono = JetBrains_Mono({
-    style: "normal",
-    display: "swap",
-    subsets: ["latin"]
-})
 
 export default function BlogPost({
     params
@@ -33,7 +28,7 @@ export default function BlogPost({
     return (
         <div className="flex flex-col space-y-6 w-[500px]">
             <h1 className="text-2xl font-medium">{post.title}</h1>
-            <div className={cn("flex flex-col space-y-3", jMono.className)}>
+            <div className={cn("flex flex-col space-y-3")}>
                 <View code={post.body} />
             </div>
         </div>
