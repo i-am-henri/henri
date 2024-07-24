@@ -1,15 +1,14 @@
 ---
 title: "How to do Markdown."
+description: "In this guide, I'll go over how to add markdown files to any nextjs app easily."
 date: "07-24-2024"
 ---
 
 Markdown is a really powerfull technology, it's a great data-format for docs. In this article, I go through how to implement 
 this  technology in your apps, easily and fast. This is a simple guide for [nextjs](https://nextjs.org).
 
-For my blog, I wanted a fast solution which should be fast to load, cheap to run and easy to implement. A week ago, I stumbled
-across a new library called "content-collections". The name is a little bit confusing, because [Astro](https://astro.build) also has
-a package, which is called content-collections. This library loads your content, validats it and returns an error, which you can 
-work with. This project also has a package to render Markdown, which is working like [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote).
+Working with Markdown in NextJs is not very easy. Unlike other frameworks like nuxt, next provides not an option to use
+Markdown directly.
 
 <Highlight code={`function wow() {
     cool()

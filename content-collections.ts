@@ -8,6 +8,7 @@ const posts = defineCollection({
   schema: (z) => ({
     title: z.string(),
     date: z.string(),
+    description: z.string()
   }),
   transform: async (document, context) => {
     const body = await compileMDX(context, document);

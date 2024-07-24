@@ -1,12 +1,10 @@
-"use client"
 import { notFound } from "next/navigation"
 import matter from "gray-matter"
-import { MDXContent } from "@content-collections/mdx/react";
-import {allPosts} from "content-collections"
-import Image from "next/image";
-import Highlight from "@/components/highlight";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { allPosts } from "content-collections"
 import { Newsreader, JetBrains_Mono } from "next/font/google";
+import { Metadata } from "next";
+import View from "./view";
+import { cn } from "@/lib/utils";
 export const runtime = "nodejs"
 
 const newsreader = Newsreader({
@@ -14,13 +12,17 @@ const newsreader = Newsreader({
     style: "italic"
 })
 
-
+const jMono = JetBrains_Mono({
+    style: "normal",
+    display: "swap",
+    subsets: ["latin"]
+})
 
 export default function BlogPost({
     params
 }: {
     params: {
-        id: string 
+        id: string
     }
 }) {
     if (!params.id) notFound()
@@ -31,28 +33,26 @@ export default function BlogPost({
     return (
         <div className="flex flex-col space-y-6 w-[500px]">
             <h1 className="text-2xl font-medium">{post.title}</h1>
-            <div className="flex flex-col space-y-3">
-                <MDXContent code={post.body} components={{Highlight: (props) => <Highlight {...props} />, T: (props) => <ShadcnTooltip {...props} />, I: (props) => <Image {...props} />}} />
+            <div className={cn("flex flex-col space-y-3", jMono.className)}>
+                <View code={post.body} />
             </div>
         </div>
     )
 }
 
-function ShadcnTooltip({
-    trigger,
-    content
+export function generateMetadata({
+    params
 }: {
-    trigger: string,
-    content: string
-}) {
-    return (
-        <Tooltip>
-            <TooltipTrigger>
-                {trigger}
-            </TooltipTrigger>
-            <TooltipContent>
-                {content}
-            </TooltipContent>
-        </Tooltip>
-    )
+    params: {
+        id: string
+    }
+}): Metadata {
+    if (!params.id) notFound()
+    const post = allPosts.find((post) => post._meta.fileName.startsWith(params.id))
+    if (!post) notFound()
+
+    return {
+        title: post.title,
+        description: post.description
+    }
 }
