@@ -11,11 +11,12 @@ const posts = defineCollection({
   }),
   transform: async (document, context) => {
     const body = await compileMDX(context, document);
-
+    const date = new Date(document.date)
     //TODO: implement a view counter
     return {
       ...document,
       body,
+      d: date
     };
   },
   onSuccess: (e) => {
