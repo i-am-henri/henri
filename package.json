@@ -10,7 +10,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@parcel/watcher": "^2.4.1",
     "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-tooltip": "^1.1.2",
     "@t3-oss/env-nextjs": "^0.10.1",
@@ -34,6 +33,7 @@
     "@content-collections/core": "^0.6.3",
     "@content-collections/mdx": "^0.1.3",
     "@content-collections/next": "^0.2.0",
+    "@parcel/watcher": "^2.4.1",
     "@types/eslint": "^8.56.11",
     "@types/node": "^20.14.11",
     "@types/react": "^18.3.3",
