@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import matter from "gray-matter"
 import { MDXContent } from "@content-collections/mdx/react";
 import {allPosts} from "content-collections"
+import Highlight from "@/components/highlight";
 
 export const runtime = "nodejs"
 
@@ -20,8 +21,10 @@ export default function BlogPost({
 
     return (
         <div className="flex flex-col space-y-6 w-[500px]">
-            <h1>{post.title}</h1>
-            <MDXContent code={post.body} />
+            <h1 className="text-2xl font-medium">{post.title}</h1>
+            <div className="flex flex-col space-y-3">
+                <MDXContent code={post.body} components={{Highlight: (props) => <Highlight {...props} />}} />
+            </div>
         </div>
     )
 }
