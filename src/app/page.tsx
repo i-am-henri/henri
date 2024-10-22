@@ -1,16 +1,15 @@
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
-import { Newsreader } from "next/font/google"
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { allPosts } from "content-collections";
-import Img from "next/image"
-import Link from "next/link"
+import { Newsreader } from "next/font/google";
+import Img from "next/image";
+import Link from "next/link";
 import Badge from "./badge";
-import Nextjs from "./icons/next";
-import Zod from "./icons/zod"
-import TypeScript from "./icons/ts";
-import Hono from "./icons/hono";
-import React from "./icons/react";
 import Figma from "./icons/figma";
+import Hono from "./icons/hono";
+import Nextjs from "./icons/next";
 import Qwik from "./icons/qwik";
+import TypeScript from "./icons/ts";
+import Zod from "./icons/zod";
 import ProjectCard from "./project";
 
 const newsreader = Newsreader({
@@ -23,7 +22,7 @@ export default function Page() {
   return (
     <main className="lg:w-[500px] space-y-12">
       <p>
-        I'm a 14 years old german {" "}
+        I'm a 15 years old german {" "}
         <Tooltip>
           <TooltipTrigger>
             <span className={newsreader.className}>webdeveloper</span>
@@ -44,7 +43,7 @@ export default function Page() {
             <span className={newsreader.className}>various projects</span>
           </TooltipTrigger>
           <TooltipContent className={newsreader.className}>
-            like a email service
+            like an email service
           </TooltipContent>
         </Tooltip>.
       </p>
@@ -54,13 +53,13 @@ export default function Page() {
         {/* Pixabay stock photo */}
         <Img src="/wakeboard.jpg" alt="Stockfoto wakeboard" className="rounded-xl" width={1920} height={1200} />
         <p>In my free-time, outside from school, I love to go <Tooltip>
-            <TooltipTrigger>
-              <span className={newsreader.className}>wakeboarding</span>
-            </TooltipTrigger>
-            <TooltipContent className={newsreader.className}>
-              like surfing
-            </TooltipContent>
-          </Tooltip>, to code and sometimes playing tennis and table tennis. I like doing stuff with the computer.</p>
+          <TooltipTrigger>
+            <span className={newsreader.className}>wakeboarding</span>
+          </TooltipTrigger>
+          <TooltipContent className={newsreader.className}>
+            like surfing
+          </TooltipContent>
+        </Tooltip>, to code and sometimes playing tennis and table tennis. I like doing stuff with the computer.</p>
       </div>
 
       {/* Skills section, Icons are from svgl */}
@@ -86,11 +85,11 @@ export default function Page() {
           </Badge>
         </div>
         <p>These are some of the skills, I've learned in the <Tooltip>
-            <TooltipTrigger>
-              <span className={newsreader.className}>past few years</span>
-            </TooltipTrigger>
-            <TooltipContent className={newsreader.className}>like 3 years</TooltipContent>
-          </Tooltip>. As I already mentioned, I often move in the webspace.</p>
+          <TooltipTrigger>
+            <span className={newsreader.className}>past few years</span>
+          </TooltipTrigger>
+          <TooltipContent className={newsreader.className}>like 3 years</TooltipContent>
+        </Tooltip>. As I already mentioned, I often move in the webspace.</p>
       </div>
 
       {/* Project section */}
